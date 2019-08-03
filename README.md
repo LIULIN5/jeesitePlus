@@ -1,5 +1,5 @@
 ## 所用技术
->Springboot、Springmvc、Mybatis、Mysql7、Vue
+>Springboot、Springmvc、Mybatis、Mysql7、Vue、Poi
 
 ## 如何使用
 >1 pc-test是Vue前端项目，必须放在Eclipse下运行
