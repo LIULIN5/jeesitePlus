@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../fhbootvwam/fhbootvwam.iml" filepath="$PROJECT_DIR$/../fhbootvwam/fhbootvwam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pc-test.iml" filepath="$PROJECT_DIR$/pc-test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FH Admin</title>
+
+    <link href="../../../assets/windows/animate/animate.min.css" rel="stylesheet" />
+    <link href="../../../assets/windows/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../../assets/windows/winui/css/winui.css" rel="stylesheet" />
+    
+	<!--引入弹窗组件-->
+    <link type="text/css" rel="stylesheet" href="../../../plugins/fhdrag/style.css" />
+	
+	<!-- 及时通讯css -->
+	<link rel="stylesheet" href="../../../plugins/fhim/dist/css/layui.css">
+	<link rel="stylesheet" href="../../../plugins/fhim/dist/css/contextMenu.css">
+	
+	<!-- vue -->
+	<script src="../../../assets/js-vue/vue.js"></script>
+	<!--全局配置-->
+    <script src="../../../assets/js-v/config.js"></script>
+
+</head>
+<body>
+    <!-- 桌面 -->
+    <div class="winui-desktop">
+
+    </div>
+
+    <!-- 开始菜单 -->
+    <div class="winui-start sp layui-hide">
+        <!-- 左边设置 -->
+        <div class="winui-start-left">
+            <div class="winui-start-item bottom" data-text="个人中心" onclick="goEditMyInfo();" style="cursor:pointer;"><i class="fa fa-user"></i></div>
+            <div class="winui-start-item winui-start-individuation bottom" data-text="主题设置" style="cursor:pointer;"><i class="fa fa-cog"></i></div>
+            <div class="winui-start-item bottom logout" data-text="注销登录" style="cursor:pointer;"><i class="fa fa-power-off"></i></div>
+        </div>
+        <!-- 中间导航 -->
+        <div class="winui-start-center">
+            <div class="layui-side-scroll">
+                <ul class="winui-menu layui-nav layui-nav-tree" lay-filter="winuimenu"></ul>
+            </div>
+        </div>
+        <!-- 右边磁贴 -->
+        <div class="winui-start-right">
+            <div class="layui-side-scroll">
+                <div class="winui-nav-tile">
+                    <div class="winui-tilebox">
+                        <div class="winui-tilebox-head">应用组件</div>
+                        <div class="winui-tilebox-body">
+                            <div class="winui-tile winui-tile-normal" onclick="calculator();">
+                                <i class="fa fa-calculator"></i>
+                                <span style="padding-left: 20px;">计算器</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 任务栏 -->
+    <div class="winui-taskbar">
+        <!-- 开始菜单触发按钮 -->
+        <div class="winui-taskbar-start sp"><i class="fa fa-windows"></i></div>
+        <!-- 任务项 -->
+        <ul class="winui-taskbar-task"></ul>
+        <!-- 任务栏时间 -->
+        <div class="winui-taskbar-time" id="myIm"></div>
+        <!-- 控制中心 -->
+        <div class="winui-taskbar-console sp" id="fhsmsCount">
+            <i class="fa fa-commenting-o" id="taskCount"></i>
+        </div>
+        <!-- 显示桌面 -->
+        <div class="winui-taskbar-desktop">
+        </div>
+    </div>
+
+    <!--控制中心-->
+    <div class="winui-console layui-hide slideOutRight sp" id="app">
+        <h1>最新任务&nbsp;&nbsp;(&nbsp;<span v-on:click="rutasklist" style="cursor:pointer;"><a><font color="white"><i class="fa fa-hand-o-right"></i>&nbsp;查看我的任务列表</font></a></span>&nbsp;)</h1>
+        <div class="winui-message">
+            <div class="layui-side-scroll" id="myTask"></div>
+        </div>
+        <div class="winui-shortcut">
+            <h2><span class="extend-switch sp">展开</span></h2>
+            <div class="winui-shortcut-item" v-on:click="sysSet" style="cursor:pointer;" v-show="systemset">
+                <i class="fa fa-cog"></i>
+                <span>系统设置</span>
+            </div>
+            <div class="winui-shortcut-item" v-on:click="editPhoto" style="cursor:pointer;">
+                <i class="fa fa-user-circle-o"></i>
+                <span>修改头像</span>
+            </div>
+            <div class="winui-shortcut-item" v-on:click="fhsms" style="cursor:pointer;">
+                <i class="fa fa-envelope-o"></i>
+                <span>站内信箱</span>
+            </div>
+        </div>
+    </div>
+    <div id="fhsmsobj"><!-- 声音消息提示 --></div>
+    
+    <script type="text/javascript" src="../../../assets/js/jquery-1.7.2.js"></script>
+
+	<!-- 本页面js -->
+	<script type="text/javascript" src="../../../assets/js-v/sys/index.js"></script>
+
+   	<!--引入弹窗组件start-->
+	<script type="text/javascript" src="../../../plugins/fhdrag/drag.js"></script>
+	<script type="text/javascript" src="../../../plugins/fhdrag/dialog.js"></script>
+	<!--引入弹窗组件end-->
+	
+	<!-- 提示 -->
+  	<script type="text/javascript" src="../../../assets/js/jquery.tips.js"></script>
+	
+    <!-- 及时通讯js¨ -->
+	<script type="text/javascript" src="../../../plugins/fhim/dist/layui.js"></script>
+	<script type="text/javascript" src="../../../assets/js-v/fhim/fhim.js"></script>
+ 	<!-- 及时通讯¨ -->
+    
+    <script>
+      layui.config({
+         base: '../../../assets/windows/js/' //指定 index.js 路径
+      }).use('index');
+    </script>
+</body>
+</html>

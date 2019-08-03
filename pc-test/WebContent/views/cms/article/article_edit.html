@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FH Admin</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="FH Admin QQ313596790" />
+
+    <link rel="icon" href="../../../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../../assets/plugins/animation/css/animate.min.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    
+    <!-- 日期插件 -->
+    <link rel="stylesheet" href="../../../assets/plugins/material-datetimepicker/css/bootstrap-material-datetimepicker.css">
+    
+    <!-- select插件 -->
+    <link rel="stylesheet" href="../../../assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../../assets/plugins/multi-select/css/multi-select.css">
+    
+    <!-- vue -->
+	<script src="../../../assets/js-vue/vue.js"></script>
+    <!--全局配置-->
+    <script src="../../../assets/js-v/config.js"></script>
+
+</head>
+
+<body style="background-color: white">
+    
+    <!-- [加载状态 ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ 加载状态  ] End -->
+
+    <!-- [ 主内容区 ] start -->
+        <div class="pcoded-wrapper" id="app">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+					
+								<div style="width: 100%;">
+									<div id="showform">
+														            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">编号</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="ID" id="ID" v-model="pd.ID" maxlength="64" placeholder="这里输入编号" title="编号">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">栏目编号</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="CATEGORY_ID" id="CATEGORY_ID" v-model="pd.CATEGORY_ID" maxlength="64" placeholder="这里输入栏目编号" title="栏目编号">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">标题</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="TITLE" id="TITLE" v-model="pd.TITLE" maxlength="255" placeholder="这里输入标题" title="标题">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">文章链接</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="LINK" id="LINK" v-model="pd.LINK" maxlength="255" placeholder="这里输入文章链接" title="文章链接">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">标题颜色</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="COLOR" id="COLOR" v-model="pd.COLOR" maxlength="50" placeholder="这里输入标题颜色" title="标题颜色">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">文章图片</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="IMAGE" id="IMAGE" v-model="pd.IMAGE" maxlength="255" placeholder="这里输入文章图片" title="文章图片">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">关键字</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="KEYWORDS" id="KEYWORDS" v-model="pd.KEYWORDS" maxlength="255" placeholder="这里输入关键字" title="关键字">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">描述、摘要</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="DESCRIPTION" id="DESCRIPTION" v-model="pd.DESCRIPTION" maxlength="255" placeholder="这里输入描述、摘要" title="描述、摘要">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">权重，越大越靠前</span></span>
+		                                    </div>
+		                                    <input type="number" class="form-control" ref="WEIGHT" id="WEIGHT" v-model="pd.WEIGHT" maxlength="11" placeholder="这里输入权重，越大越靠前" title="权重，越大越靠前">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">权重期限</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control date" ref="WEIGHT_DATE" id="WEIGHT_DATE" maxlength="32" placeholder="这里输入权重期限" title="权重期限">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">点击数</span></span>
+		                                    </div>
+		                                    <input type="number" class="form-control" ref="HITS" id="HITS" v-model="pd.HITS" maxlength="11" placeholder="这里输入点击数" title="点击数">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">推荐位，多选</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="POSID" id="POSID" v-model="pd.POSID" maxlength="10" placeholder="这里输入推荐位，多选" title="推荐位，多选">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">自定义内容视图</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="CUSTOM_CONTENT_VIEW" id="CUSTOM_CONTENT_VIEW" v-model="pd.CUSTOM_CONTENT_VIEW" maxlength="255" placeholder="这里输入自定义内容视图" title="自定义内容视图">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">视图配置</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="VIEW_CONFIG" id="VIEW_CONFIG" v-model="pd.VIEW_CONFIG" maxlength="0" placeholder="这里输入视图配置" title="视图配置">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">创建者</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="CREATE_BY" id="CREATE_BY" v-model="pd.CREATE_BY" maxlength="64" placeholder="这里输入创建者" title="创建者">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">创建时间</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control date" ref="CREATE_DATE" id="CREATE_DATE" maxlength="32" placeholder="这里输入创建时间" title="创建时间">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">更新者</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="UPDATE_BY" id="UPDATE_BY" v-model="pd.UPDATE_BY" maxlength="64" placeholder="这里输入更新者" title="更新者">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">更新时间</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control date" ref="UPDATE_DATE" id="UPDATE_DATE" maxlength="32" placeholder="这里输入更新时间" title="更新时间">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">备注信息</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="REMARKS" id="REMARKS" v-model="pd.REMARKS" maxlength="255" placeholder="这里输入备注信息" title="备注信息">
+		                                </div>
+							            <div class="input-group input-group-sm mb-3" style="margin-top: -10px;">
+		                                    <div class="input-group-prepend">
+		                                        <span class="input-group-text" style="width: 79px;"><span style="width: 100%;">删除标记</span></span>
+		                                    </div>
+		                                    <input type="text" class="form-control" ref="DEL_FLAG" id="DEL_FLAG" v-model="pd.DEL_FLAG" maxlength="1" placeholder="这里输入删除标记" title="删除标记">
+		                                </div>
+							            <div class="input-group" style="margin-top:10px;background-color: white" >
+							            	<span style="width: 100%;text-align: center;">
+							            		<a class="btn btn-light btn-sm" v-on:click="save">保存</a>
+							            		<a class="btn btn-light btn-sm" onclick="top.Dialog.close()">取消</a>
+							            	</span>
+							            </div>
+							       </div>
+						           <!-- [加载状态 ] start -->
+								    <div id="jiazai" style="display:none;margin-top:50px;">
+								    	<div class="d-flex justify-content-center">
+	                                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+								    <!-- [ 加载状态  ] End -->
+								</div>
+	    
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- [ 主内容区 ] end -->
+    
+<script type="text/javascript" src="../../../assets/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../../assets/js/pre-loader.js"></script>
+<script src="../../../assets/plugins/sweetalert/js/sweetalert.min.js"></script>
+
+<!-- 日期插件 -->
+<script src="../../../assets/js/pages/moment-with-locales.min.js"></script>
+<script src="../../../assets/plugins/material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script src="../../../assets/js/pages/form-picker-custom.js"></script>
+
+<!-- select插件 -->
+<script src="../../../assets/plugins/select2/js/select2.full.min.js"></script>
+<script src="../../../assets/plugins/multi-select/js/jquery.quicksearch.js"></script>
+<script src="../../../assets/plugins/multi-select/js/jquery.multi-select.js"></script>
+<script src="../../../assets/js/pages/form-select-custom.js"></script>
+
+<!-- 表单验证提示 -->
+<script src="../../../assets/js/jquery.tips.js"></script>
+
+<script type="text/javascript">
+
+var vm = new Vue({
+	el: '#app',
+	
+	data:{
+		ARTICLE_ID: '',	//主键ID
+		pd: [],						//存放字段参数
+		msg:'add'
+    },
+	
+	methods: {
+		
+        //初始执行
+        init() {
+        	var FID = this.getUrlKey('FID');	//当接收过来的FID不为null时,表示此页面是修改进来的
+        	if(null != FID){
+        		this.msg = 'edit';
+        		this.ARTICLE_ID = FID;
+        		this.getData();
+        	}
+        	setTimeout(function(){
+        		vm.getDict();
+            },200);
+        },
+        
+        //去保存
+    	save: function (){
+    		
+			if(this.pd.ID == '' || this.pd.ID == undefined){
+				$("#ID").tips({
+					side:3,
+		            msg:'请输入编号',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.ID = '';
+				this.$refs.ID.focus();
+			return false;
+			}
+			if(this.pd.CATEGORY_ID == '' || this.pd.CATEGORY_ID == undefined){
+				$("#CATEGORY_ID").tips({
+					side:3,
+		            msg:'请输入栏目编号',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.CATEGORY_ID = '';
+				this.$refs.CATEGORY_ID.focus();
+			return false;
+			}
+			if(this.pd.TITLE == '' || this.pd.TITLE == undefined){
+				$("#TITLE").tips({
+					side:3,
+		            msg:'请输入标题',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.TITLE = '';
+				this.$refs.TITLE.focus();
+			return false;
+			}
+			if(this.pd.LINK == '' || this.pd.LINK == undefined){
+				$("#LINK").tips({
+					side:3,
+		            msg:'请输入文章链接',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.LINK = '';
+				this.$refs.LINK.focus();
+			return false;
+			}
+			if(this.pd.COLOR == '' || this.pd.COLOR == undefined){
+				$("#COLOR").tips({
+					side:3,
+		            msg:'请输入标题颜色',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.COLOR = '';
+				this.$refs.COLOR.focus();
+			return false;
+			}
+			if(this.pd.IMAGE == '' || this.pd.IMAGE == undefined){
+				$("#IMAGE").tips({
+					side:3,
+		            msg:'请输入文章图片',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.IMAGE = '';
+				this.$refs.IMAGE.focus();
+			return false;
+			}
+			if(this.pd.KEYWORDS == '' || this.pd.KEYWORDS == undefined){
+				$("#KEYWORDS").tips({
+					side:3,
+		            msg:'请输入关键字',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.KEYWORDS = '';
+				this.$refs.KEYWORDS.focus();
+			return false;
+			}
+			if(this.pd.DESCRIPTION == '' || this.pd.DESCRIPTION == undefined){
+				$("#DESCRIPTION").tips({
+					side:3,
+		            msg:'请输入描述、摘要',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.DESCRIPTION = '';
+				this.$refs.DESCRIPTION.focus();
+			return false;
+			}
+			if(this.pd.WEIGHT == '' || this.pd.WEIGHT == undefined){
+				$("#WEIGHT").tips({
+					side:3,
+		            msg:'请输入权重，越大越靠前',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.WEIGHT = '';
+				this.$refs.WEIGHT.focus();
+			return false;
+			}
+			this.pd.WEIGHT_DATE = $("#WEIGHT_DATE").val();
+			if(this.pd.WEIGHT_DATE == '' || this.pd.WEIGHT_DATE == undefined){
+				$("#WEIGHT_DATE").tips({
+					side:3,
+		            msg:'请输入权重期限',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.WEIGHT_DATE = '';
+				this.$refs.WEIGHT_DATE.focus();
+			return false;
+			}
+			if(this.pd.HITS == '' || this.pd.HITS == undefined){
+				$("#HITS").tips({
+					side:3,
+		            msg:'请输入点击数',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.HITS = '';
+				this.$refs.HITS.focus();
+			return false;
+			}
+			if(this.pd.POSID == '' || this.pd.POSID == undefined){
+				$("#POSID").tips({
+					side:3,
+		            msg:'请输入推荐位，多选',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.POSID = '';
+				this.$refs.POSID.focus();
+			return false;
+			}
+			if(this.pd.CUSTOM_CONTENT_VIEW == '' || this.pd.CUSTOM_CONTENT_VIEW == undefined){
+				$("#CUSTOM_CONTENT_VIEW").tips({
+					side:3,
+		            msg:'请输入自定义内容视图',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.CUSTOM_CONTENT_VIEW = '';
+				this.$refs.CUSTOM_CONTENT_VIEW.focus();
+			return false;
+			}
+			if(this.pd.VIEW_CONFIG == '' || this.pd.VIEW_CONFIG == undefined){
+				$("#VIEW_CONFIG").tips({
+					side:3,
+		            msg:'请输入视图配置',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.VIEW_CONFIG = '';
+				this.$refs.VIEW_CONFIG.focus();
+			return false;
+			}
+			if(this.pd.CREATE_BY == '' || this.pd.CREATE_BY == undefined){
+				$("#CREATE_BY").tips({
+					side:3,
+		            msg:'请输入创建者',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.CREATE_BY = '';
+				this.$refs.CREATE_BY.focus();
+			return false;
+			}
+			this.pd.CREATE_DATE = $("#CREATE_DATE").val();
+			if(this.pd.CREATE_DATE == '' || this.pd.CREATE_DATE == undefined){
+				$("#CREATE_DATE").tips({
+					side:3,
+		            msg:'请输入创建时间',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.CREATE_DATE = '';
+				this.$refs.CREATE_DATE.focus();
+			return false;
+			}
+			if(this.pd.UPDATE_BY == '' || this.pd.UPDATE_BY == undefined){
+				$("#UPDATE_BY").tips({
+					side:3,
+		            msg:'请输入更新者',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.UPDATE_BY = '';
+				this.$refs.UPDATE_BY.focus();
+			return false;
+			}
+			this.pd.UPDATE_DATE = $("#UPDATE_DATE").val();
+			if(this.pd.UPDATE_DATE == '' || this.pd.UPDATE_DATE == undefined){
+				$("#UPDATE_DATE").tips({
+					side:3,
+		            msg:'请输入更新时间',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.UPDATE_DATE = '';
+				this.$refs.UPDATE_DATE.focus();
+			return false;
+			}
+			if(this.pd.REMARKS == '' || this.pd.REMARKS == undefined){
+				$("#REMARKS").tips({
+					side:3,
+		            msg:'请输入备注信息',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.REMARKS = '';
+				this.$refs.REMARKS.focus();
+			return false;
+			}
+			if(this.pd.DEL_FLAG == '' || this.pd.DEL_FLAG == undefined){
+				$("#DEL_FLAG").tips({
+					side:3,
+		            msg:'请输入删除标记',
+		            bg:'#AE81FF',
+		            time:2
+		        });
+				this.pd.DEL_FLAG = '';
+				this.$refs.DEL_FLAG.focus();
+			return false;
+			}
+    		
+    		$("#showform").hide();
+    		$("#jiazai").show();
+    		
+            //发送 post 请求提交保存
+            $.ajax({
+	            	xhrFields: {
+	                    withCredentials: true
+	                },
+					type: "POST",
+					url: httpurl+'article/'+this.msg,
+			    	data: {ARTICLE_ID:this.ARTICLE_ID,
+				    ID:this.pd.ID,
+				    CATEGORY_ID:this.pd.CATEGORY_ID,
+				    TITLE:this.pd.TITLE,
+				    LINK:this.pd.LINK,
+				    COLOR:this.pd.COLOR,
+				    IMAGE:this.pd.IMAGE,
+				    KEYWORDS:this.pd.KEYWORDS,
+				    DESCRIPTION:this.pd.DESCRIPTION,
+				    WEIGHT:this.pd.WEIGHT,
+				    WEIGHT_DATE:this.pd.WEIGHT_DATE,
+				    HITS:this.pd.HITS,
+				    POSID:this.pd.POSID,
+				    CUSTOM_CONTENT_VIEW:this.pd.CUSTOM_CONTENT_VIEW,
+				    VIEW_CONFIG:this.pd.VIEW_CONFIG,
+				    CREATE_BY:this.pd.CREATE_BY,
+				    CREATE_DATE:this.pd.CREATE_DATE,
+				    UPDATE_BY:this.pd.UPDATE_BY,
+				    UPDATE_DATE:this.pd.UPDATE_DATE,
+				    REMARKS:this.pd.REMARKS,
+				    DEL_FLAG:this.pd.DEL_FLAG,
+			    	tm:new Date().getTime()},
+					dataType:"json",
+					success: function(data){
+                        if("success" == data.result){
+                        	swal("", "保存成功", "success");
+                        	setTimeout(function(){
+                        		top.Dialog.close();//关闭弹窗
+                            },1000);
+                        }else if ("exception" == data.result){
+                        	showException("文章",data.exception);//显示异常
+                        	$("#showform").show();
+                    		$("#jiazai").hide();
+                        }
+                    }
+				}).done().fail(function(){
+                   swal("登录失效!", "请求服务器无响应，稍后再试", "warning");
+                   $("#showform").show();
+           		   $("#jiazai").hide();
+                });
+    	},
+    	
+    	//根据主键ID获取数据
+    	getData: function(){
+    		//发送 post 请求
+            $.ajax({
+            	xhrFields: {
+                    withCredentials: true
+                },
+				type: "POST",
+				url: httpurl+'article/goEdit',
+		    	data: {ARTICLE_ID:this.ARTICLE_ID,tm:new Date().getTime()},
+				dataType:"json",
+				success: function(data){
+                     if("success" == data.result){
+                     	vm.pd = data.pd;							//参数map
+						$("#WEIGHT_DATE").val(data.pd.WEIGHT_DATE);
+						$("#CREATE_DATE").val(data.pd.CREATE_DATE);
+						$("#UPDATE_DATE").val(data.pd.UPDATE_DATE);
+                     }else if ("exception" == data.result){
+                     	showException("文章",data.exception);	//显示异常
+                     	$("#showform").show();
+                 		$("#jiazai").hide();
+                     }
+                  }
+			}).done().fail(function(){
+                  swal("登录失效!", "请求服务器无响应，稍后再试", "warning");
+                  $("#showform").show();
+          		  $("#jiazai").hide();
+               });
+    	},
+    	
+    	//获取数据字典数据
+		getDict: function (){
+		},
+    	
+    	//根据url参数名称获取参数值
+        getUrlKey: function (name) {
+            return decodeURIComponent(
+                (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
+        }
+        
+	},
+	
+	mounted(){
+        this.init();
+    }
+})
+				
+</script>
+
+</body>
+</html>

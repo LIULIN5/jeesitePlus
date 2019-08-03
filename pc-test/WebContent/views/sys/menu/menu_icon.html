@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FH Admin</title>
+	<!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 10]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<!-- Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="FH Admin QQ313596790" />
+	
+	<link rel="icon" href="../../../assets/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../../../assets/fonts/fontawesome/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../../../assets/plugins/animation/css/animate.min.css">
+	<link rel="stylesheet" href="../../../assets/fonts/material/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="../../../assets/windows/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../../../assets/css/style.css">
+	
+	<!-- vue -->
+	<script src="../../../assets/js-vue/vue.js"></script>
+	<!--全局配置-->
+	<script src="../../../assets/js-v/config.js"></script>
+
+</head>
+
+<body style="background-color: white">
+
+	<!-- [加载状态 ] start -->
+	<div class="loader-bg" id="app">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ 加载状态  ] End -->
+
+	<!-- [ 主内容区 ] start -->
+	<div class="pcoded-wrapper">
+		<div class="pcoded-content">
+			<div class="pcoded-inner-content">
+				<div class="main-body">
+					<div class="page-wrapper">
+						<!-- [ Main Content ] start -->
+						<div class="row">
+
+							<div id="showform" class="icons-demo">
+								<div style="width: 100%;">
+									<h6 style="margin-left: 5px;">双击选择的图标</h6>
+									<div class="i-main" id="icon-wrapper">
+										<div class="i-block" ondblclick="setIcon('fa fa-motorcycle')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-motorcycle"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-male')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-male"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-female')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-female"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-handshake-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-handshake-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-exclamation-triangle')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-exclamation-triangle"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-anchor')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-anchor"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-credit-card-alt')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-credit-card-alt"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-map-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-map-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-database')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-database"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-adjust')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-adjust"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-arrows')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-arrows"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-area-chart')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-area-chart"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-bar-chart')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-bar-chart"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-battery-full')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-battery-full"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-battery-quarter')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-battery-quarter"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-bell')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-bell"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-bell-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-bell-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-book')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-book"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-bookmark')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-bookmark"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-bookmark-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-bookmark-o"></i>
+										</div>
+										
+										<div class="i-block" ondblclick="setIcon('fa fa-briefcase')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-briefcase"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-bullhorn')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-bullhorn"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-calculator')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-calculator"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-camera-retro')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-camera-retro"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-check')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-check"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-check-circle')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-check-circle"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-check-circle-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-check-circle-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-check-square')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-check-square"></i>
+										</div>
+										
+										<div class="i-block" ondblclick="setIcon('fa fa-clock-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-clock-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-cloud-download')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-cloud-download"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-cloud-upload')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-cloud-upload"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-coffee')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-coffee"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-commenting')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-commenting"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-commenting-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-commenting-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-comments')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-comments"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-comments-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-comments-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-cube')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-cube"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-ellipsis-h')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-ellipsis-h"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-envelope')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-envelope"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-envelope-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-envelope-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-envelope-open')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-envelope-open"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-envelope-open-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-envelope-open-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-exchange')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-exchange"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-eye')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-eye"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-eye-slash')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-eye-slash"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-file-excel-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-file-excel-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-file-pdf-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-file-pdf-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-file-powerpoint-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-file-powerpoint-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-file-video-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-file-video-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-file-word-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-file-word-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-film')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-film"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-folder')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-folder"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-folder-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-folder-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-folder-open')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-folder-open"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-folder-open-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-folder-open-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-gear')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-gear"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-gears')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-gears"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-globe')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-globe"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-graduation-cap')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-graduation-cap"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-hashtag')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-hashtag"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-hdd-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-hdd-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-headphones')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-headphones"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-heart')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-heart"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-heart-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-heart-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-home')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-home"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-key')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-key"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-keyboard-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-keyboard-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-laptop')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-laptop"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-leaf')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-leaf"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-legal')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-legal"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-line-chart')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-line-chart"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-male')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-male"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-map-marker')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-map-marker"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-meh-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-meh-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-microphone')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-microphone"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-microphone-slash')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-microphone-slash"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-mobile')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-mobile"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-money')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-money"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-music')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-music"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-newspaper-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-newspaper-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-paint-brush')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-paint-brush"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-paw')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-paw"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-pencil')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-pencil"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-pencil-square-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-pencil-square-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-phone')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-phone"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-pie-chart')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-pie-chart"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-photo')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-photo"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-plane')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-plane"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-plus')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-plus"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-power-off')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-power-off"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-print')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-print"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-question-circle-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-question-circle-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-random')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-random"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-recycle')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-recycle"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-refresh')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-refresh"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-search')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-search"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-send-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-send-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-server')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-server"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-reply')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-reply"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-share')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-share"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-share-alt')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-share-alt"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-shield')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-shield"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-shopping-bag')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-shopping-bag"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-shopping-cart')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-shopping-cart"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-sign-in')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-sign-in"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-smile-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-smile-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-snowflake-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-snowflake-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-space-shuttle')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-space-shuttle"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-spinner')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-spinner"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-square-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-square-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-star')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-star"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-star-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-star-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-sticky-note-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-sticky-note-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-suitcase')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-suitcase"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-tachometer')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-tachometer"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-tag')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-tag"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-tags')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-tags"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-tasks')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-tasks"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-taxi')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-taxi"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-television')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-television"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-thermometer')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-thermometer"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-thumb-tack')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-thumb-tack"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-thumbs-o-up')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-thumbs-o-up"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-times')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-times"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-tint')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-tint"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-toggle-right')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-toggle-right"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-trash-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-trash-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-truck')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-truck"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-desktop')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-desktop"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-umbrella')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-umbrella"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-unlock')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-unlock"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-unlock-alt')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-unlock-alt"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-user')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-user"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-user-o')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-user-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-user-plus')"
+											data-clipboard-text="feather icon-align-right"
+											data-filter="icon-align-right" data-toggle="tooltip" title=""
+											data-original-title="icon-align-right">
+											<i class="fa fa-user-plus"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-users')"
+											data-clipboard-text="feather icon-align-left"
+											data-filter="icon-align-left" data-toggle="tooltip" title=""
+											data-original-title="icon-align-left">
+											<i class="fa fa-users"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-vcard')"
+											data-clipboard-text="feather icon-align-justify"
+											data-filter="icon-align-justify" data-toggle="tooltip"
+											title="" data-original-title="icon-align-justify">
+											<i class="fa fa-vcard"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-vcard-o')"
+											data-clipboard-text="feather icon-airplay"
+											data-filter="icon-airplay" data-toggle="tooltip" title=""
+											data-original-title="icon-airplay">
+											<i class="fa fa-vcard-o"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-video-camera')"
+											data-clipboard-text="feather icon-align-center"
+											data-filter="icon-align-center" data-toggle="tooltip"
+											title="" data-original-title="icon-align-center">
+											<i class="fa fa-video-camera"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-volume-control-phone')"
+											data-clipboard-text="feather icon-alert-triangle"
+											data-filter="icon-alert-triangle" data-toggle="tooltip"
+											title="" data-original-title="icon-alert-triangle">
+											<i class="fa fa-volume-control-phone"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-volume-up')"
+											data-clipboard-text="feather icon-alert-triangle"
+											data-filter="icon-alert-triangle" data-toggle="tooltip"
+											title="" data-original-title="icon-alert-triangle">
+											<i class="fa fa-volume-up"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-wifi')"
+											data-clipboard-text="feather icon-activity"
+											data-filter="icon-activity" data-toggle="tooltip" title=""
+											data-original-title="icon-activity">
+											<i class="fa fa-wifi"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-window-maximize')"
+											data-clipboard-text="feather icon-alert-circle"
+											data-filter="icon-alert-circle" data-toggle="tooltip"
+											title="" data-original-title="icon-alert-circle">
+											<i class="fa fa-window-maximize"></i>
+										</div>
+										<div class="i-block" ondblclick="setIcon('fa fa-wrench')"
+											data-clipboard-text="feather icon-alert-octagon"
+											data-filter="icon-alert-octagon" data-toggle="tooltip"
+											title="" data-original-title="icon-alert-octagon">
+											<i class="fa fa-wrench"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- [加载状态 ] start -->
+							<div id="jiazai" style="display: none; margin-top: 50px;width: 100%;text-align: center;">
+								<div class="d-flex justify-content-center">
+									<div class="spinner-border" style="width: 3rem; height: 3rem;"
+										role="status">
+										<span class="sr-only">Loading...</span>
+									</div>
+								</div>
+							</div>
+							<!-- [ 加载状态  ] End -->
+
+						</div>
+						<!-- [ Main Content ] end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [ 主内容区 ] end -->
+
+	<script type="text/javascript" src="../../../assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../../assets/js/pre-loader.js"></script>
+	<script type="text/javascript" src="../../../assets/plugins/sweetalert/js/sweetalert.min.js"></script>
+	<!-- 表单验证提示 -->
+	<script type="text/javascript" src="../../../assets/js/jquery.tips.js"></script>
+
+	<!-- 本页面js --> 
+	<script type="text/javascript" src="../../../assets/js-v/sys/menu_icon.js"></script>  
+
+</body>
+</html>
